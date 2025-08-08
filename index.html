@@ -4,14 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body style="background-color: #292a2e; color: white;">
-  <form action="">
-    <input type="checkbox" name="" id="">
-    <label for="">Personalizable</label>
-    <button onclick="opciones()">.</button>
+<body class="flex flex-col bg-[#18181a] text-white p-4 static">
+  <form class="flex flex-col gap-4" action="" id="toDoForm">
+    <div class="flex gap-4 border p-4 rounded">
+      <input type="checkbox" name="" id="">
+      <div>
+        <label for="">Personalizable</label>
+        <p>10:30 - 11:30</p>
+      </div>
+      <details>
+        <summary></summary>
+        <button onclick="eliminarTarea()">Eliminar</button>
+        <button>Cambiar Nombre</button>
+      </details>
+    </div>
+
+    <button onclick="agregarTarea()">Agregar Tarea</button>
   </form>
+
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 py-4 bg-[#85c2c3]">
+    <form action="" class="flex flex-col text-[#102123]">
+      <h2 class="text-center font-bold text-2xl">Crear Tarea</h2>
+      
+      <label class="font-semibold text-xl" for="">Titulo</label>
+      <input class="bg-[#d9eeed] border-0 py-px pl-1 outline-none rounded" type="text" value="">
+
+      <h3 class="font-semibold text-xl mt-2">Fecha</h3>
+      <div class="flex justify-center">
+        <input class="border rounded-lg p-1 font-semibold" type="date">
+      </div>
+
+      <h3 class="font-semibold text-xl">Hora</h3>
+      <div class="flex justify-center gap-3 mt-1">
+        <label class="font-semibold text-xl" for="">Desde</label>
+        <input class="border rounded-lg p-1 font-semibold" type="time">
+        <label class="font-semibold text-xl" for="">Hasta</label>
+        <input class="border rounded-lg p-1 font-semibold" type="time">
+      </div>
+
+      <div class="flex justify-between mt-4">
+        <button 
+          class="gap-2 px-4 py-3 bg-radial-[at_50%_75%] from-[#3f7e83] to-[#2c5d61] hover:from-[#2c5d61] 
+          hover:to-[#3f7e83] text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform 
+          hover:-translate-y-0.5 transition duration-300 ease-in-out focus:outline-none focus:ring-2 
+          focus:ring-teal-500 focus:ring-opacity-50 active:translate-y-0" 
+          type="submit">Guardar
+        </button>
+        <button 
+          class="gap-2 px-4 py-3 bg-[#c53030] hover:bg-[#9b2c2c] text-white font-semibold rounded-lg 
+          shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition duration-300 ease-in-out 
+          focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 active:translate-y-0"  
+          type="button">Cancelar
+        </button>
+        
+      </div>
+
+    </form>
+  </div>
   
   <script src="./main.js"></script>
 </body>
+
+<!--
+<style>
+  details summary {
+    list-style: none; /* Elimina la flecha predeterminada */
+  }
+
+  details summary::before {
+    content: url("ruta/a/tu/icono.svg"); /* Reemplaza con tu icono */
+    margin-right: 5px; /* Ajusta el espacio entre el icono y el texto */
+  }
+
+  details[open] summary::before {
+    content: url("ruta/a/tu/icono-abierto.svg"); /* Icono para estado abierto */
+  }
+</style>
+-->
 </html>
